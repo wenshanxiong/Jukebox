@@ -1,4 +1,5 @@
 import discord
+import os
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -16,4 +17,4 @@ class MyClient(discord.Client):
             await message.reply('Hello!', mention_author=True)
 
 client = MyClient()
-client.run('TOKEN')
+client.run(os.environ.get('JUKEBOX_TOKEN'))
